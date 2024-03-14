@@ -1,0 +1,288 @@
+/*....................................... Navbar section........................................ */
+.navbar, header {
+    background-color: white !important; 
+    min-height: 100vh; 
+}
+
+/* Adjust the navbar to not occupy the full page */
+.navbar {
+    min-height: auto;
+}
+
+/* Navbar center alignment and styling */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-item {
+    margin: 0 30px;
+}
+
+.nav-link {
+    font-size: 50px;
+    font-weight:bold; 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    text-transform: uppercase;
+    padding: 10px;
+    color: black; 
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Resume link default style */
+.navbar .resume-link {
+    color: rgb(65, 191, 166); 
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Navbar link hover and active styles */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:active {
+    color: grey; 
+}
+
+.navbar .resume-link:hover, 
+.navbar .resume-link:focus,
+.navbar .resume-link:active{
+    color: rgb(226, 103, 103); 
+}
+
+/* Remove margin from the first and last items */
+.nav-item:first-child {
+    margin-left: 0;
+}
+
+.nav-item:last-child {
+    margin-right: 0;
+}
+
+/*..........image section..........*/
+
+/* Header text styling and cursor effect */
+header h1 {
+    text-transform: uppercase; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    position: relative;
+    display: inline-block; 
+}
+
+/* Cursor Effect */
+header h1::after {
+    content: '|';
+    margin-left: 5px;
+    opacity: 1;
+    animation: blink 1s step-end infinite;
+}
+
+/* Blinking Cursor Animation */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Style for the image container */
+header .container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    max-width: 600px; 
+    height: auto; 
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+    margin-top: 100px;
+}
+/* Style for Haiyue Yuan text */
+header h1 {
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    display: inline-block;
+    margin-top: 20px; 
+    font-style: italic;
+    font-weight:bolder; 
+    font-size: 50px;
+}
+
+header .lead {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-size: 15px;
+}
+
+/*............................................. About section......................................... */
+#about {
+    background-color: rgb(234, 234, 234);
+    min-height: 120vh; 
+    color: #000; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}
+
+/* Styling the "ABOUT" text */
+#about h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    text-align: center;
+    font-weight: bolder;
+    font-size: 100px;
+    
+}
+
+/* Creating a content box for the paragraphs */
+#about .content-box {
+    padding: 10px;
+    border-radius: 10px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    max-width: 800px; 
+    margin: auto; 
+    box-shadow: none;
+    padding-bottom: 300px;
+}
+
+#about .content-box p {
+    text-align: justify;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+
+.underline-text {
+    text-decoration: underline;
+}
+
+.interactive-text {
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.interactive-text:active,
+.interactive-text:focus,
+.interactive-text:hover{
+    color: rgb(226, 103, 103);  
+}
+
+/*................................................ Licenses section......................... */
+#certifications {
+    background-color: white;
+    min-height: 150vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+}
+
+#certifications .col-md-6 {
+    margin-bottom: 50px;
+}
+
+#certifications h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    text-align: center;
+    font-weight: bolder;
+    font-size: 100px;
+    padding-bottom: 200px;
+    color: #000;
+}
+
+#certifications h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    text-align: left;
+    font-weight: bolder;
+    font-size: 50px;
+    padding-bottom: 20px;
+}
+
+#certifications p {
+    font-size: 30px; /* Set font size for certification contents */
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/* Certifications section - image size adjustment */
+#certifications img {
+    width: 5px; 
+    height: 5px; 
+}
+
+/*..................................................Contact section.................................. */
+#contact {
+    background-color: rgb(234, 234, 234);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+/* Adjusting font sizes in Contact section */
+#contact h1 {
+    font-family: monospace;
+    font-size: 50px; 
+    font-weight: bold;
+    padding: 10px;
+    padding-top: 400px;
+}
+
+#contact h2 {
+    font-family: monospace;
+    font-size: 20px; 
+    padding: 10px;
+}
+
+#contact h3 {
+    font-family: monospace;
+    font-size: 20px; 
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* Footer within Contact section */
+#contact footer {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px; 
+    padding-top: 400px; 
+}
+
+/*.................................................*/
+/* Hamburger Icon Style */
+navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("../img/Hamburger_icon.png"); 
+    /* Set dimensions if needed */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Hide/show navbar on Iphone series sizes */
+@media (max-width: 932px) {
+    .navbar-collapse {
+        display:flexbox;
+    }
+
+    .navbar-toggler {
+        display:block;
+    }
+}
+
+@media (min-width: 932px) {
+    .navbar-toggler {
+        display: flexbox;
+    }
+
+    .navbar-collapse {
+        display: block;
+    }
+}
+
