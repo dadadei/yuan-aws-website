@@ -129,8 +129,9 @@ header .lead {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
     text-align: center;
     font-weight: bolder;
-    font-size: 100px;
-    
+    font-size: 80px;
+    padding-top: 100px;
+    position: relative;
 }
 
 /* Creating a content box for the paragraphs */
@@ -141,13 +142,13 @@ header .lead {
     max-width: 800px; 
     margin: auto; 
     box-shadow: none;
-    padding-bottom: 300px;
+    padding-bottom: 200px;
 }
 
 #about .content-box p {
     text-align: justify;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .underline-text {
@@ -169,8 +170,7 @@ header .lead {
 /*................................................ Licenses section......................... */
 #certifications {
     background-color: white;
-    min-height: 150vh; /* Full viewport height */
-    display: flex;
+    min-height: 100vh; 
     justify-content: center;
     align-items: center;
     text-align:center;
@@ -178,15 +178,7 @@ header .lead {
 
 #certifications .col-md-6 {
     margin-bottom: 50px;
-}
-
-#certifications h2 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
-    text-align: center;
-    font-weight: bolder;
-    font-size: 100px;
-    padding-bottom: 200px;
-    color: #000;
+    padding-top: 200px;
 }
 
 #certifications h3 {
@@ -198,7 +190,7 @@ header .lead {
 }
 
 #certifications p {
-    font-size: 30px; /* Set font size for certification contents */
+    font-size: 30px; 
     text-align: left;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -210,7 +202,8 @@ header .lead {
     height: 5px; 
 }
 
-/*..................................................Contact section.................................. */
+
+/*............................... Contact Form Section.......................................... */
 #contact {
     background-color: rgb(234, 234, 234);
     min-height: 100vh;
@@ -223,34 +216,119 @@ header .lead {
 
 /* Adjusting font sizes in Contact section */
 #contact h1 {
-    font-family: monospace;
-    font-size: 50px; 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 80px; 
     font-weight: bold;
-    padding: 10px;
-    padding-top: 400px;
+    padding: 40px;
+    padding-top: 50px;
 }
 
-#contact h2 {
+/* Style for form elements */
+#contact-form .form-control {
+    border: none;
+    height: 20px; 
+    padding: 30px;
+    font-size: 16px; 
     font-family: monospace;
-    font-size: 20px; 
-    padding: 10px;
 }
 
-#contact h3 {
+#contact-form .form-control:focus {
+    border-color: #006ada;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Style for textarea */
+#contact-form textarea.form-control {
+    height: 200px; 
+    resize: vertical; 
+}
+
+/* Button Styles */
+#contact-form button.btn {
+    background-color: rgb(65, 191, 166); 
+    color: white;
+    border: 0;
+    padding: 10px 100px;
+    font-size: 16px; 
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    margin-top: 1rem; 
+    width: auto; 
+    min-width: 200px; 
     font-family: monospace;
-    font-size: 20px; 
+}
+
+#contact-form button.btn:hover,
+#contact-form button.btn:focus,
+#contact-form button.btn:active {
+    background-color: rgb(226, 103, 103); 
+    color: white;
+    transition: color 0.3s ease;
+}
+
+/* Layout adjustments for form fields */
+#contact .form-row {
+    margin-bottom: 20px; 
+}
+
+/* Adjust column padding */
+#contact .col-md-6 {
+    padding-right: 15px; 
+    padding-left: 15px;  
+}
+
+#contact .col {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+/* ...............................Social Media and Footer Styles.............................*/
+.social-media-and-footer {
+    background-color: rgb(234, 234, 234); 
+    padding: 40px 0; 
+}
+
+.social-media-links {
+    margin-bottom: 30px; 
+}
+
+.social-media-links .social-icons a {
+    font-size: 20px;
+    color: #000;
+    padding: 30px;
+    font-family:sans-serif;
+}
+
+.social-media-links .social-icons a:hover,
+.social-media-links .social-icons a:active,
+.social-media-links .social-icons a:focus {
+    color: rgb(226, 103, 103);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .social-media-links .social-icons a {
+        font-size: 16px; /* Smaller size for mobile */
+        padding: 10px; /* Reduced padding for mobile */
+        margin: 0 5px; /* Reduced margin for mobile */
+    }
+}
+
+
+footer {
+    padding: 10px 0; 
+    color: #000; 
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
-    padding: 10px;
+    font-size: 20px;
+    padding-bottom: 0px;
 }
 
-/* Footer within Contact section */
-#contact footer {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px; 
-    padding-top: 400px; 
-}
 
-/*.................................................*/
+/*.........................................................................................................*/
 /* Hamburger Icon Style */
 navbar-toggler {
     border: none;
