@@ -8,7 +8,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         message: document.getElementById('message').value
     };
 
-    fetch('https://54fotuzied.execute-api.us-east-1.amazonaws.com/qa', { 
+    fetch('https://cglfflmhx0.execute-api.us-east-1.amazonaws.com/test', { 
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {
