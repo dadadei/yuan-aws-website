@@ -19,6 +19,9 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     .then(data => {
         console.log(data);
         alert("Message sent successfully!");
+
+        // Resetting the form fields
+        document.getElementById('contact-form').reset();
     })
     .catch((error) => {
         console.error('Error:', error);
