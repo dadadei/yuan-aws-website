@@ -256,7 +256,7 @@ header .lead {
     margin-top: 1rem; 
     width: auto; 
     min-width: 200px; 
-    font-family: monospace;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #contact-form button.btn:hover,
