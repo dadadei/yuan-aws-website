@@ -39,8 +39,8 @@ Here's a quick rundown of the AWS services that make this magic happen:
 ## Service Architecture
 
 Check out the architecture diagram below to see how all these pieces fit together:
+<img src="https://github.com/dadadei/yuan-aws-website/assets/49823349/86e1d7d7-f1ac-4205-aeb3-608c0d3ab66c" alt="Service Architecture" width="600" height="300">
 
-<img src="https://github.com/dadadei/yuan-aws-website/assets/49823349/a49e7da5-1065-497c-8e78-d69c6af3d1ec" alt="Service Architecture" width="600" height="400">
 
 ### Architecture Explanation
 
@@ -57,6 +57,8 @@ Check out the architecture diagram below to see how all these pieces fit togethe
 ## Directory Structure 🗂️
 
 Here's how everything is organized in the project:
+
+<img src="https://github.com/dadadei/yuan-aws-website/assets/49823349/ed5896c5-510c-45f6-aed0-4edd19cecdc2" alt="Service Architecture" width="600" height="300">
 
 
 ## Contributing 🤝
