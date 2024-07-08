@@ -54,18 +54,18 @@ Check out the architecture diagram below to see how all these pieces fit togethe
 6. **DynamoDB**: Stores the visitor count data. Think of it as a digital guestbook.
 7. **Amazon SES**: Sends email notifications from the contact form submissions.
 
-## Directory Structure 🗂️
+## Directory Structure
 
 Here's how everything is organized in the project:
 
 <img src="https://github.com/dadadei/yuan-aws-website/assets/49823349/ed5896c5-510c-45f6-aed0-4edd19cecdc2" alt="Service Architecture" width="600" height="300">
 
 
-## Contributing 🤝
+## Contributing
 
 Got some cool ideas to make this project even better? Awesome! Fork the repository, make your changes, and submit a pull request. Contributions are always welcome! Let's make this project rock together! 🎉
 
-## License 📜
+## License
 
 This project is licensed under the MIT License. Feel free to use and modify the code. See the LICENSE file for more details.
 
