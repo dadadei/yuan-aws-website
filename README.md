@@ -67,7 +67,7 @@ Got some cool ideas to make this project even better? Awesome! Fork the reposito
 
 ## License
 
-This project is licensed under the MIT License. Feel free to use and modify the code. See the LICENSE file for more details.
+This project is licensed under the MIT License. Feel free to use and modify the code. See the [LICENSE](https://opensource.org/license/mit) for more details.
 
 ---
 
