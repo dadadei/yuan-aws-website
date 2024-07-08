@@ -10,9 +10,9 @@ Hey there! Welcome to my AWS Cloud Resume project! This journey is part of the C
 - [Project Overview](#project-overview)
 - [Services Used](#services-used)
 - [Service Architecture](#service-architecture)
-- [Directory Structure 🗂️](#directory-structure)
-- [Contributing 🤝](#contributing)
-- [License 📜](#license)
+- [Directory Structure](#directory-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Introduction
 
