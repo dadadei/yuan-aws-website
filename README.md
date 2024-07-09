@@ -2,7 +2,7 @@
 
 Hey there! Welcome to my AWS Cloud Resume project! This journey is part of the Cloud Resume Challenge and showcases my cloud and web development skills. Buckle up and let's dive in! 🚀
 
-[The Cloud Resume Challenge - AWS](https://cloudresumechallenge.dev/docs/the-challenge/aws/)
+[The Cloud Resume Challenge Tutorial]([https://cloudresumechallenge.dev/docs/the-challenge/aws/](https://dev.to/yuan_hy/the-cloud-resume-challenge-my-cloud-adventure-5439))
 
 ## Table of Contents 📚
 
