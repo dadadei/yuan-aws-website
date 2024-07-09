@@ -39,7 +39,8 @@ Here's a quick rundown of the AWS services that make this magic happen:
 ## Service Architecture
 
 Check out the architecture diagram below to see how all these pieces fit together:
-<img src="https://github.com/dadadei/yuan-aws-website/assets/49823349/16b12efc-4bf4-4a8d-b975-5d1561516c7a" alt="Service Architecture" width="600" height="400">
+<img src="https://github.com/dadadei/yuan-aws-website/assets/49823349/94b6b3db-fc97-4822-bbc9-53099a00678a" alt="Service Architecture" width="600" height="400">
+
 
 ### Architecture Explanation
 
