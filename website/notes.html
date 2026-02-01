@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Notes</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <main style="max-width: 780px; margin: 24px auto; padding: 0 16px;">
+    <h1>Notes</h1>
+
+    <section style="border:1px solid #ddd;border-radius:12px;padding:14px;margin:16px 0;">
+      <label>Name</label><br/>
+      <input id="noteName" maxlength="30" placeholder="Anonymous" style="width:100%;padding:10px;margin:8px 0;"/>
+
+      <label>Message</label><br/>
+      <textarea id="noteBody" maxlength="500" rows="4" placeholder="Say something..."
+        style="width:100%;padding:10px;margin:8px 0;"></textarea>
+
+      <button id="noteSubmit" style="padding:10px 14px;border-radius:10px;border:1px solid #333;background:#fff;cursor:pointer;">
+        Post
+      </button>
+
+      <div id="noteStatus" style="margin-top:10px;"></div>
+    </section>
+
+    <h2>Recent notes</h2>
+    <div id="noteList">Loading...</div>
+  </main>
+
+  <script src="./js/notes.js"></script>
+</body>
+</html>
