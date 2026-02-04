@@ -103,6 +103,8 @@ To ensure the system is **observable and production-ready**, a dedicated monitor
 
 This monitoring layer transforms the project from a static demo into a **continuously observed system**, similar to how real-world services are operated.
 
+<img src="docs/grafana-website-monitoring.png" alt="grafana monitoring">
+
 ## Request Flow
 
 **Website Request:**
