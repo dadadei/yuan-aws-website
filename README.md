@@ -10,10 +10,10 @@ Beyond the core challenge requirements, this project has been extended with **pr
 
 - [Introduction](#introduction)
 - [Project Overview](#project-overview)
-- [Core Technologies & Services](#Core-Technologies-Services)
+- [Core Technologies and Services](#Core-Technologies-and-Services)
 - [System Architecture](#System-Architecture)
 - [Request Flow](#Request-Flow)
-- [Infrastructure as Code & CI/CD](#Infrastructure-as-Code-CI/CD)
+- [Infrastructure as Code and CI/CD](#Infrastructure-as-Code-and-CI/CD)
 - [Directory Structure](#directory-structure)
 - [Contributing](#contributing)
 - [License](#license)
@@ -41,7 +41,7 @@ The Cloud Resume project delivers:
 
 The result is a system that is not only deployed, but also **observable, debuggable, and operationally meaningful**.
 
-## Core Technologies & Services
+## Core Technologies and Services
 
 - ### AWS Services
 
@@ -127,7 +127,7 @@ This monitoring layer transforms the project from a static demo into a **continu
 3. Dashboards visualize metrics and alerts trigger on failures
 
 
-## Infrastructure as Code & CI/CD
+## Infrastructure as Code and CI/CD
 
 **Infrastructure as Code**
 
