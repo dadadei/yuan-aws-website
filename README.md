@@ -1,6 +1,8 @@
 # My AWS Cloud Resume 🌐📄
 
-Hey there! Welcome to my AWS Cloud Resume project! This journey is part of the Cloud Resume Challenge and showcases my cloud and web development skills. Buckle up and let's dive in! 🚀
+This repository contains my **AWS-based Cloud Resume project**, built as part of the **Cloud Resume Challenge**.
+
+Beyond the core challenge requirements, this project has been extended with **production-style monitoring and alerting using Prometheus and Grafana**, reflecting real-world Cloud / DevOps engineering practices.
 
 [The Cloud Resume Challenge Tutorial (Haiyue Yuan)](https://dev.to/yuan_hy/the-cloud-resume-challenge-my-cloud-adventure-5439)
 
@@ -8,58 +10,144 @@ Hey there! Welcome to my AWS Cloud Resume project! This journey is part of the C
 
 - [Introduction](#introduction)
 - [Project Overview](#project-overview)
-- [Services Used](#services-used)
-- [Service Architecture](#service-architecture)
+- [Core Technologies & Services](#Core Technologies & Services)
+- [System Architecture](#System Architecture)
+- [Request Flow](#Request Flow)
+- [Infrastructure as Code & CI/CD](#Infrastructure as Code & CI/CD)
 - [Directory Structure](#directory-structure)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
 
-Hello there! 👋 I'm thrilled to share my Cloud Resume Challenge project with you. This isn't just another resume—it's a fully interactive, cloud-powered experience designed to showcase my skills in cloud computing and web development. From hosting my resume on AWS S3 to integrating a visitor counter powered by DynamoDB, this project has it all. Let's take a closer look at how everything comes together.
+This project is more than a static online resume. It is a **cloud-native, observable web application** designed to demonstrate how modern AWS-based systems are built, deployed, monitored, and operated.
+
+In addition to completing the Cloud Resume Challenge requirements, I focused on:
+
+- Infrastructure automation
+- Serverless backend design
+- System observability and alerting
+- Production-style architecture decisions
 
 ## Project Overview
 
-Imagine having a resume that's not just a static document but a dynamic, living webpage that tracks visitors and handles interactions seamlessly. Sounds cool, right? This project is all about making that happen. The Cloud Resume Challenge pushes you to build a modern cloud application using a variety of AWS services, ensuring the solution is secure, scalable, and highly available.
+The Cloud Resume project delivers:
 
-## Services Used
+- A globally distributed static resume website
+- Serverless backend APIs for dynamic functionality
+- Infrastructure provisioned using **Terraform**
+- Automated deployments via **GitHub Actions**
+- A **monitoring and alerting stack** using Prometheus and Grafana
 
-Here's a quick rundown of the AWS services that make this magic happen:
+The result is a system that is not only deployed, but also **observable, debuggable, and operationally meaningful**.
 
-- **Amazon S3**: Hosts the static website files (HTML, CSS, JS). Think of it as the cozy home for my resume.
-- **Amazon CloudFront**: Distributes the content globally with low latency, making sure my resume is super fast wherever you are.
-- **Amazon Route 53**: Manages DNS for my custom domain. It's like the phonebook for the internet, directing traffic to my site.
-- **AWS Lambda**: Executes backend logic for the visitor counter and contact form. These are my little workers running code in response to events.
-- **Amazon DynamoDB**: Stores visitor count data. This is the brain keeping track of all the visitors.
-- **Amazon API Gateway**: Provides RESTful API endpoints for the Lambda functions. It’s the bridge connecting the front end to the back end.
-- **Amazon SES**: Sends emails from the contact form. It's the postman delivering your messages to my inbox.
-- **Terraform**: Manages the infrastructure as code. It’s the blueprint that builds and maintains my cloud environment.
-- **GitHub Actions**: Implements CI/CD for automated deployments. Think of it as my personal butler, ensuring everything runs smoothly with each update.
+## Core Technologies & Services
 
-## Service Architecture
+- ### AWS Services
+
+  - **Amazon S3** – Static website hosting
+  - **Amazon CloudFront** – Global CDN with HTTPS
+  - **Amazon Route 53** – DNS and custom domain routing
+  - **AWS Lambda** – Serverless backend logic
+  - **Amazon DynamoDB** – Persistent storage for visitor counts
+  - **Amazon API Gateway** – REST APIs
+  - **Amazon SES** – Email delivery for contact form submissions
+  - **Amazon EC2** – Dedicated monitoring host
+
+  ### DevOps & Observability
+
+  - **Terraform** – Infrastructure as Code (IaC)
+  - **GitHub Actions** – CI/CD automation
+  - **Prometheus** – Metrics collection and querying
+  - **Node Exporter** – EC2 host-level metrics
+  - **Blackbox Exporter** – Synthetic HTTPS monitoring
+  - **Grafana** – Dashboards and alerting
+
+## System Architecture
 
 Check out the architecture diagram below to see how all these pieces fit together:
-<img src="https://github.com/dadadei/yuan-aws-website/assets/49823349/94b6b3db-fc97-4822-bbc9-53099a00678a" alt="Service Architecture" width="600" height="400">
+
+High-level system architecture:
+
+<img src="docs/system-architecture.png" alt="System Architecture" width="400" height="400">
 
 
-### Architecture Explanation
 
-1. **Static Website**: The HTML, CSS, and JavaScript files are stored in an S3 bucket configured to host a static website. Simple yet effective.
-2. **CloudFront Distribution**: Distributes the website content globally and provides HTTPS. Because everyone deserves a fast and secure browsing experience.
-3. **Route 53**: Points your custom domain to the CloudFront distribution. It ensures that when you type in my domain, you get to my site without a hitch.
-4. **API Gateway**: Provides endpoints for the backend services. It’s like the bouncer at a club, ensuring only the right requests get in.
-5. **Lambda Functions**:
-    - **Visitor Counter**: Updates and retrieves the visitor count from DynamoDB. It’s always keeping tabs on who’s visiting.
-    - **Contact Form Handler**: Sends an email with the contact form details using SES. Making sure I never miss a message from you.
-6. **DynamoDB**: Stores the visitor count data. Think of it as a digital guestbook.
-7. **Amazon SES**: Sends email notifications from the contact form submissions.
+
+### Monitoring & Observability
+
+To ensure the system is **observable and production-ready**, a dedicated monitoring stack runs on EC2.
+
+**Metrics Collection:**
+
+- **Node Exporter**
+  - CPU, memory, disk, and network metrics for the monitoring host
+- **Blackbox Exporter**
+  - HTTPS availability monitoring for `https://hi-yuan.com`
+  - HTTP response status codes
+  - TLS handshake success
+  - End-to-end request latency
+
+**Visualization:**
+
+- Grafana dashboards provide real-time visibility into:
+  - EC2 host health
+  - Website uptime and latency
+  - HTTP/TLS probe results
+
+**Alerting:**
+
+- Alerts trigger when website availability fails (`probe_success < 1`)
+- Time-based thresholds reduce alert noise
+- Notifications are delivered via email
+
+This monitoring layer transforms the project from a static demo into a **continuously observed system**, similar to how real-world services are operated.
+
+## Request Flow
+
+**Website Request:**
+
+1. User accesses `hi-yuan.com`
+2. Route 53 resolves the domain to CloudFront
+3. CloudFront serves static content from S3 over HTTPS
+
+**Visitor Counter:**
+
+1. Frontend JavaScript calls API Gateway
+2. API Gateway invokes a Lambda function
+3. Lambda updates and retrieves data from DynamoDB
+4. Visitor count is returned to the frontend
+
+**Monitoring Flow:**
+
+1. Prometheus scrapes:
+   - `node_exporter` for EC2 metrics
+   - `blackbox_exporter` for website probes
+2. Grafana queries Prometheus
+3. Dashboards visualize metrics and alerts trigger on failures
+
+
+## Infrastructure as Code & CI/CD
+
+**Infrastructure as Code**
+
+Terraform is used to provision and manage:
+
+- Core AWS resources
+- IAM roles and permissions
+- Networking and security components
+
+**CI/CD**
+
+GitHub Actions automates:
+
+- Frontend deployments to S3
+- CloudFront cache invalidation
+- Safe and repeatable releases
 
 ## Directory Structure
 
-Here's how everything is organized in the project:
-
-<img src="https://github.com/dadadei/yuan-aws-website/assets/49823349/ed5896c5-510c-45f6-aed0-4edd19cecdc2" alt="Service Architecture" width="600" height="400">
-
+<img src="docs/directory-structure.png" alt="directory structure" height="400" width="400">
 
 ## Contributing
 
