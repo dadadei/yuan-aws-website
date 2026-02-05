@@ -1,4 +1,4 @@
-# My AWS Cloud Resume 🌐📄
+# My AWS Cloud Resume 
 
 This repository contains my **AWS-based Cloud Resume project**, built as part of the **Cloud Resume Challenge**.
 
@@ -6,12 +6,13 @@ Beyond the core challenge requirements, this project has been extended with **pr
 
 [The Cloud Resume Challenge Tutorial (Haiyue Yuan)](https://dev.to/yuan_hy/the-cloud-resume-challenge-my-cloud-adventure-5439)
 
-## Table of Contents 📚
+## Table of Contents 
 
 - [Introduction](#introduction)
 - [Project Overview](#project-overview)
 - [Core Technologies and Services](#Core-Technologies-and-Services)
 - [System Architecture](#System-Architecture)
+- [Database Architecture and Schema Migrations](#Database-Architecture-and-Schema-Migrations)
 - [Request Flow](#Request-Flow)
 - [Infrastructure as Code and CI/CD](#Infrastructure-as-Code-and-CI/CD)
 - [Directory Structure](#directory-structure)
@@ -43,25 +44,25 @@ The result is a system that is not only deployed, but also **observable, debugga
 
 ## Core Technologies and Services
 
-- ### AWS Services
+**AWS Services:**
 
-  - **Amazon S3** – Static website hosting
-  - **Amazon CloudFront** – Global CDN with HTTPS
-  - **Amazon Route 53** – DNS and custom domain routing
-  - **AWS Lambda** – Serverless backend logic
-  - **Amazon DynamoDB** – Persistent storage for visitor counts
-  - **Amazon API Gateway** – REST APIs
-  - **Amazon SES** – Email delivery for contact form submissions
-  - **Amazon EC2** – Dedicated monitoring host
+- **Amazon S3** – Static website hosting
+- **Amazon CloudFront** – Global CDN with HTTPS
+- **Amazon Route 53** – DNS and custom domain routing
+- **AWS Lambda** – Serverless backend logic
+- **Amazon DynamoDB** – Persistent storage for visitor counts
+- **Amazon API Gateway** – REST APIs
+- **Amazon SES** – Email delivery for contact form submissions
+- **Amazon EC2** – Dedicated monitoring host
 
-  ### DevOps & Observability
+**DevOps & Observability:**
 
-  - **Terraform** – Infrastructure as Code (IaC)
-  - **GitHub Actions** – CI/CD automation
-  - **Prometheus** – Metrics collection and querying
-  - **Node Exporter** – EC2 host-level metrics
-  - **Blackbox Exporter** – Synthetic HTTPS monitoring
-  - **Grafana** – Dashboards and alerting
+- **Terraform** – Infrastructure as Code (IaC)
+- **GitHub Actions** – CI/CD automation
+- **Prometheus** – Metrics collection and querying
+- **Node Exporter** – EC2 host-level metrics
+- **Blackbox Exporter** – Synthetic HTTPS monitoring
+- **Grafana** – Dashboards and alerting
 
 ## System Architecture
 
@@ -69,9 +70,40 @@ Check out the architecture diagram below to see how all these pieces fit togethe
 
 High-level system architecture:
 
-<img src="docs/system-architecture.png" alt="System Architecture" width="400" height="400">
+<img src="docs/system-architecture.png" alt="System Architecture" width="500" height="600">
+
+## Database Architecture and Schema Migrations
+
+To move beyond key-value storage and demonstrate production database practices, the project includes a PostgreSQL 17 database hosted on Amazon RDS.
+
+Key design decisions include:
+
+- **VPC-only database access** using Security Groups
+- **TLS-encrypted connections** (`verify-full`)
+- **Credentials managed via AWS Secrets Manager**
+- **Non-root database access** for application operations
+
+**Schema Management**:
+
+Database changes are managed using a **versioned migration approach**, inspired by tools such as Flyway:
+
+- A dedicated `schema_migrations` table tracks applied versions
+- A baseline migration establishes the initial schema
+- Forward-compatible schema upgrades are applied using `ALTER TABLE`
+- All changes are performed online without data loss
+
+This approach enables safe schema evolution while maintaining backward compatibility in a live environment.
 
 
+
+<img src="docs/database-architecture.png" alt="database-architecture" width="500" height="600">
+
+The database layer is designed with production security and evolvability in mind: 
+
+\- PostgreSQL 17 is hosted on Amazon RDS with VPC-only access
+\- Access is restricted via Security Groups and encrypted using TLS (verify-full)
+\- Credentials are stored and retrieved securely from AWS Secrets Manager
+\- Schema changes are managed through versioned migrations using a dedicated schema_migrations table
 
 
 ### Monitoring & Observability
@@ -149,11 +181,11 @@ GitHub Actions automates:
 
 ## Directory Structure
 
-<img src="docs/directory-structure.png" alt="directory structure" height="400" width="400">
+<img src="docs/directory-structure.png" alt="directory structure" height="700" width="600">
 
 ## Contributing
 
-Got some cool ideas to make this project even better? Awesome! Fork the repository, make your changes, and submit a pull request. Contributions are always welcome! Let's make this project rock together! 🎉
+Got some cool ideas to make this project even better? Awesome! Fork the repository, make your changes, and submit a pull request. Contributions are always welcome! Let's make this project rock together! 
 
 ## License
 
