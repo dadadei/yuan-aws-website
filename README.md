@@ -100,10 +100,10 @@ This approach enables safe schema evolution while maintaining backward compatibi
 
 The database layer is designed with production security and evolvability in mind: 
 
-\- PostgreSQL 17 is hosted on Amazon RDS with VPC-only access
-\- Access is restricted via Security Groups and encrypted using TLS (verify-full)
-\- Credentials are stored and retrieved securely from AWS Secrets Manager
-\- Schema changes are managed through versioned migrations using a dedicated schema_migrations table
+- PostgreSQL 17 is hosted on Amazon RDS with VPC-only access
+- Access is restricted via Security Groups and encrypted using TLS (verify-full)
+- Credentials are stored and retrieved securely from AWS Secrets Manager
+- Schema changes are managed through versioned migrations using a dedicated schema_migrations table
 
 
 ### Monitoring & Observability
